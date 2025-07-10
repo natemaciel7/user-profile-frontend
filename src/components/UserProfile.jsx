@@ -205,3 +205,25 @@ export default function UserProfile() {
     </>
   );
 }
+
+<div style={{ textAlign: "center", margin: "2rem 0" }}>
+  <button
+    onClick={() =>
+      window.open(
+        "https://user-profile-backend-xkw3.onrender.com/usuarios",
+        "_blank"
+      )
+    }
+    style={{
+      padding: "0.5rem 1rem",
+      background: "#2c3e50",
+      color: "#fff",
+      border: "none",
+      borderRadius: "8px",
+      cursor: "pointer",
+      fontSize: "1rem",
+    }}
+  >
+    Ver dados direto na API
+  </button>
+</div>;
