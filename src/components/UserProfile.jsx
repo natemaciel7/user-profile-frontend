@@ -27,7 +27,7 @@ export default function UserProfile() {
 
   const buscarUsuarios = () => {
     axios
-      .get("http://localhost:3001/usuarios")
+      .get("https://user-profile-backend-xkw3.onrender.com/usuarios")
       .then((response) => {
         setUsuarios(response.data);
       })
@@ -47,7 +47,11 @@ export default function UserProfile() {
       const payload = { ...formData };
       delete payload.imagem;
 
-      await axios.post("http://localhost:3001/usuarios", payload);
+      await axios.post(
+        "https://user-profile-backend-xkw3.onrender.com/usuarios",
+        payload
+      );
+
       alert("Dados salvos com sucesso!");
 
       // Limpar o formulário
@@ -82,7 +86,10 @@ export default function UserProfile() {
     if (!confirmacao) return;
 
     try {
-      await axios.delete(`http://localhost:3001/usuarios/${id}`);
+      await axios.delete(
+        `https://user-profile-backend-xkw3.onrender.com/usuarios/${id}`
+      );
+
       alert("Usuário excluído com sucesso!");
       buscarUsuarios();
     } catch (error) {
